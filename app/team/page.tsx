@@ -29,25 +29,32 @@ export default function TeamPage() {
           </p>
         </div>
       </section>
-      <section className="section">
-        <div className="container team-roster-layout">
-          <div className="section-heading">
+      <section className="section section-soft">
+        <div className="container">
+          <div className="section-heading team-heading">
             <span className="eyebrow">The people behind RAJO</span>
-            <h2>Serving with a shared purpose.</h2>
+            <h2>Serving with a shared purpose</h2>
             <p>
               Our team works with families, local educators, and community supporters to help
               children learn.
             </p>
           </div>
-          <ol className="team-roster">
-            {teamMembers.map((member, index) => (
-              <li className="team-roster-item" key={member.name}>
-                <span className="team-roster-number">{String(index + 1).padStart(2, "0")}</span>
-                <span className="team-roster-name">{member.name}</span>
-                {member.role && <span className="team-roster-role">{member.role}</span>}
-              </li>
+          <div className="team-profiles">
+            {teamMembers.map((member) => (
+              <article className="team-profile" key={member.name}>
+                <div className="team-profile-image" aria-hidden="true">
+                  <span className="team-profile-monogram">
+                    {member.name.split(" ").slice(0, 2).map((part) => part[0]).join("")}
+                  </span>
+                </div>
+                <p className="team-profile-role">{member.role ?? "Team Member"}</p>
+                <h3 className="team-profile-name">{member.name}</h3>
+                <p className="team-profile-copy">
+                  Part of the community team supporting Qur’anic education for children in Jigjiga.
+                </p>
+              </article>
             ))}
-          </ol>
+          </div>
         </div>
       </section>
       <section className="section section-soft">

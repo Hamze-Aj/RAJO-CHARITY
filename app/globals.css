@@ -55,7 +55,7 @@ button, input, textarea { font: inherit; }
 }
 .menu-toggle { display: none; }
 .brand { display: inline-flex; align-items: center; gap: 11px; flex-shrink: 0; }
-.brand img { width: 90px; height: 60px; object-fit: contain; }
+.brand img { width: 108px; height: 72px; object-fit: contain; }
 .brand-copy { display: grid; line-height: 1.15; }
 .brand-name { font-family: var(--font-display), Georgia, serif; font-size: 20px; font-weight: 600; }
 .brand-note {
@@ -250,14 +250,24 @@ button, input, textarea { font: inherit; }
 .team-photo { position: relative; min-height: 420px; margin-top: 4px; }
 .team-photo img { object-fit: cover; object-position: center 46%; }
 .team-quote { margin: 48px auto 0; }
-.team-roster-layout { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 80px; }
-.team-roster-layout .section-heading { margin-bottom: 0; }
-.team-roster { margin: 0; padding: 0; list-style: none; }
-.team-roster-item { display: grid; min-height: 68px; grid-template-columns: 42px 1fr auto; align-items: center; gap: 16px; border-bottom: 1px solid var(--line); }
-.team-roster-item:first-child { border-top: 1px solid var(--line); }
-.team-roster-number { color: var(--green); font-family: var(--font-display), Georgia, serif; font-size: 14px; }
-.team-roster-name { font-size: 14px; font-weight: 700; }
-.team-roster-role { color: var(--teal); font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+.team-heading { margin-bottom: 35px; }
+.team-profiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.team-profile { min-width: 0; padding: 15px; border: 1px solid var(--line); border-radius: 6px; background: var(--white); }
+.team-profile-image { display: grid; aspect-ratio: 1.08 / 1; place-items: center; border-radius: 4px; background: #eaf0ee; }
+.team-profile-monogram {
+  display: grid;
+  width: 76px;
+  aspect-ratio: 1;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--teal);
+  color: var(--white);
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 25px;
+}
+.team-profile-role { margin: 16px 0 6px; color: var(--green); font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+.team-profile-name { margin: 0; font-family: var(--font-display), Georgia, serif; font-size: 19px; font-weight: 600; line-height: 1.35; overflow-wrap: anywhere; }
+.team-profile-copy { margin: 9px 0 2px; color: var(--muted); font-size: 13px; line-height: 1.7; }
 .team-focus-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px; }
 .team-focus { padding-top: 20px; border-top: 1px solid var(--line); }
 .team-focus-mark { width: 34px; height: 2px; background: var(--green); }
@@ -321,7 +331,8 @@ button, input, textarea { font: inherit; }
   .hero-grid { min-height: auto; grid-template-columns: 1fr; gap: 40px; padding-block: 58px; }
   .about-hero-grid { grid-template-columns: 1fr; }
   .about-hero-aside { padding: 25px 0 0; border-top: 1px solid #cbd7d4; border-left: 0; }
-  .split-content-grid, .eligibility-grid, .team-roster-layout { grid-template-columns: 1fr; gap: 32px; }
+  .split-content-grid, .eligibility-grid { grid-template-columns: 1fr; gap: 32px; }
+  .team-profiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .hero-image-wrap { min-height: 370px; }
   .quran-band { grid-template-columns: 1fr; gap: 26px; padding: 40px; }
   .contact-grid { grid-template-columns: 1fr; gap: 42px; padding-block: 56px 72px; }
@@ -329,7 +340,7 @@ button, input, textarea { font: inherit; }
 @media (max-width: 600px) {
   .header-inner, .footer-inner, .container { width: min(100% - 36px, 1160px); }
   .header-inner { min-height: 74px; align-items: center; gap: 12px; padding-block: 8px; }
-  .brand img { width: 72px; height: 48px; }
+  .brand img { width: 84px; height: 56px; }
   .brand-name { font-size: 18px; }
   .brand-note { display: none; }
   .menu-toggle {
@@ -392,9 +403,10 @@ button, input, textarea { font: inherit; }
   .quran-translation { font-size: 19px; }
   .page-intro { padding-block: 57px 45px; }
   .team-photo { min-height: 290px; }
-  .team-roster-item { grid-template-columns: 30px minmax(0, 1fr) auto; gap: 10px; }
-  .team-roster-name { font-size: 12px; }
-  .team-roster-role { font-size: 10px; }
+  .team-profiles { grid-template-columns: 1fr; gap: 16px; }
+  .team-profile { padding: 13px; }
+  .team-profile-image { aspect-ratio: 1.5 / 1; }
+  .team-profile-monogram { width: 64px; }
   .contact-copy h1 { font-size: 40px; }
   .footer-main { grid-template-columns: 1fr; gap: 25px; }
   .footer-contact { justify-self: start; }
